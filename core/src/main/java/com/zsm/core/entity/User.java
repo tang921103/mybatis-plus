@@ -1,4 +1,4 @@
-package com.zsm.generate.entity;
+package com.zsm.core.entity;
 
 import lombok.Data;
 
