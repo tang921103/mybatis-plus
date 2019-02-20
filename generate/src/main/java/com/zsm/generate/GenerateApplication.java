@@ -10,8 +10,8 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
-@MapperScan(basePackages = {"com.zsm.core.mapper"})
+//@SpringBootApplication
+//@MapperScan(basePackages = {"com.zsm.core.mapper"})
 public class GenerateApplication {
 
     public static void main(String[] args) {
@@ -68,7 +68,7 @@ public class GenerateApplication {
         sc.setColumnNaming(NamingStrategy.underline_to_camel);
         sc.setTablePrefix("dc_");
         sc.setFieldPrefix("dc_");
-        sc.setInclude("dc_user");
+        sc.setInclude("dc_func");
         sc.setEntityLombokModel(true);
         sc.setControllerMappingHyphenStyle(true);
         //实体类属性对应的表字段，不开启可能会出错

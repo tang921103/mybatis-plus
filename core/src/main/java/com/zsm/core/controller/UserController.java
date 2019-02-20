@@ -4,6 +4,7 @@ package com.zsm.core.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.zsm.core.entity.UserEntity;
 import com.zsm.core.service.UserService;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.stereotype.Controller;
@@ -22,6 +23,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/user")
+@Validated
 public class UserController {
     @Resource
     private UserService userServiceImpl;
