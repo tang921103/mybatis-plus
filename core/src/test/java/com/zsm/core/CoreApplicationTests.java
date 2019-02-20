@@ -123,7 +123,7 @@ public class CoreApplicationTests {
 //        queryWrapper.likeRight("dc_func_name","数据");
 //        queryWrapper.isNull("dc_func_pid");
 //        queryWrapper.isNotNull("dc_func_pid");
-        queryWrapper.or(id->id.lt("id",10).gt("id",5));
+//        queryWrapper.or(id->id.lt("id",10).gt("id",5));
         List<FuncEntity> list  = funcServiceImpl.list(queryWrapper);
         for(FuncEntity e : list){
             System.out.println(e);

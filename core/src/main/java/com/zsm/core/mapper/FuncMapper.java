@@ -18,4 +18,5 @@ import java.util.List;
 public interface FuncMapper extends BaseMapper<FuncEntity> {
     @Select("select * from dc_func where id <10")
     List<FuncEntity> getAll(QueryWrapper<FuncEntity> entityQueryWrapper);
+    int deleteById(int id);
 }
