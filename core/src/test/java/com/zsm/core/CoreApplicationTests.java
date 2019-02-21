@@ -138,4 +138,27 @@ public class CoreApplicationTests {
         List<FuncEntity> list = funcMapper.getAll(new QueryWrapper<FuncEntity>());
         System.out.println(list);
     }
+
+    /**
+     * queryWrapper
+     */
+    @Test
+    public void selectTest(){
+        QueryWrapper<FuncEntity> queryWrapper = new QueryWrapper<>();
+        queryWrapper.select("id","dc_func_name");
+        List<FuncEntity> list = funcServiceImpl.list(queryWrapper);
+        System.out.println(list);
+    }
+
+    /**
+     * or()
+     * or() and() nested() apply()
+     */
+    @Test
+    public void orTest(){
+        QueryWrapper<FuncEntity> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("dc_func_name","数据管理").or().eq("dc_func_name","首页");
+        queryWrapper.or(i->i.eq("id",4));
+        List<FuncEntity>  list = funcServiceImpl.list(queryWrapper);
+    }
 }

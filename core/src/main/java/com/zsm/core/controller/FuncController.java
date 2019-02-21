@@ -44,7 +44,7 @@ public class FuncController {
     public IPage<FuncEntity> page(Page<FuncEntity> page,FuncEntity entity){
         QueryWrapper<FuncEntity> queryWrapper = new QueryWrapper<>();
 //        queryWrapper.eq("dc_func_name","数据管理");
-        queryWrapper.eq("dc_func_name","数据管理");
+//        queryWrapper.eq("dc_func_name","数据管理");
         IPage<FuncEntity> list = funcService.page(page,queryWrapper);
         return  list;
     }

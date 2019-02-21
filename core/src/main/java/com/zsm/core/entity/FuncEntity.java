@@ -1,9 +1,6 @@
 package com.zsm.core.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -59,6 +56,7 @@ public class FuncEntity implements Serializable {
 
     @ApiModelProperty(value = "删除标志，0正常1已删除")
     @TableField("dc_func_delete")
+    @TableLogic//逻辑删除字段
     private Integer funcDelete;
 
     @ApiModelProperty(value = "0 功能菜单 1按钮")
