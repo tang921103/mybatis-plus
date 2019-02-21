@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 
 /**
  * <p>
@@ -28,7 +29,7 @@ public class UserController {
     @Resource
     private UserService userServiceImpl;
     @RequestMapping("/findAll")
-    public Object findAll(@Valid UserEntity entity){
+    public Object findAll(@Valid UserEntity entity,@NotBlank(message = "卡号") String card){
         return userServiceImpl.list();
     }
 }

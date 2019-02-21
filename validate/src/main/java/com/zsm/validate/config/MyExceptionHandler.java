@@ -6,6 +6,11 @@ import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
+import javax.validation.ValidationException;
+import java.util.Set;
+
 
 /**
  * 全局异常处理
@@ -25,6 +30,21 @@ public class MyExceptionHandler{
         if(result.hasErrors()){
             for(ObjectError error : result.getAllErrors()){
                  msg = error.getDefaultMessage();
+            }
+        }
+        return msg;
+    }
+    @ExceptionHandler(ConstraintViolationException.class)
+    public Object constraintException(ValidationException e){
+        ConstraintViolationException c = null;
+        String msg= null;
+        if(e instanceof ConstraintViolationException){
+             c = (ConstraintViolationException) e;
+        }
+        if(null != c){
+            Set<ConstraintViolation<?>> set = c.getConstraintViolations();
+            for(ConstraintViolation<?> cc : set){
+                 msg = cc.getMessage();
             }
         }
         return msg;
