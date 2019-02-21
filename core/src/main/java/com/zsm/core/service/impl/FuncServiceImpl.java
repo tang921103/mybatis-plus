@@ -1,5 +1,6 @@
 package com.zsm.core.service.impl;
 
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zsm.core.entity.FuncEntity;
 import com.zsm.core.mapper.FuncMapper;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Service;
  * @since 2019-02-20
  */
 @Service
+@DS("slave")
 public class FuncServiceImpl extends ServiceImpl<FuncMapper, FuncEntity> implements FuncService {
 
 }
