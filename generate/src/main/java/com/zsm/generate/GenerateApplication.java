@@ -10,7 +10,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-//@SpringBootApplication
+@SpringBootApplication
 //@MapperScan(basePackages = {"com.zsm.core.mapper"})
 public class GenerateApplication {
 
@@ -52,7 +52,7 @@ public class GenerateApplication {
         autoGenerator.setDataSource(dc);
         //包配置
         PackageConfig pc = new PackageConfig();
-        pc.setParent("com.zsm.core");
+        pc.setParent("com.zsm.validate");
         pc.setController("controller");
         pc.setEntity("entity");
         pc.setMapper("mapper");
@@ -68,7 +68,7 @@ public class GenerateApplication {
         sc.setColumnNaming(NamingStrategy.underline_to_camel);
         sc.setTablePrefix("dc_");
         sc.setFieldPrefix("dc_");
-        sc.setInclude("dc_func");
+        sc.setInclude("dc_user");
         sc.setEntityLombokModel(true);
         sc.setControllerMappingHyphenStyle(true);
         //实体类属性对应的表字段，不开启可能会出错
