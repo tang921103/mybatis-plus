@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
  * @since 2019-02-20
  */
 @Service
-@DS("slave")
+@DS("master")
 public class FuncServiceImpl extends ServiceImpl<FuncMapper, FuncEntity> implements FuncService {
 
 }

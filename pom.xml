@@ -63,8 +63,14 @@
             <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
             <version>2.5.0</version>
         </dependency>
-        <!--大坑
-            druid版本高了会报错,无法创建数据源
+        <!--格式化sql-->
+        <dependency>
+            <groupId>p6spy</groupId>
+            <artifactId>p6spy</artifactId>
+            <version>3.7.0</version>
+        </dependency>
+        <!--
+        druid版本高了会报错,无法创建数据源
         -->
         <dependency>
             <groupId>com.alibaba</groupId>
