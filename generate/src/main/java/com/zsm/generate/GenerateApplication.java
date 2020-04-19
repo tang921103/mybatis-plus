@@ -45,14 +45,15 @@ public class GenerateApplication {
         autoGenerator.setGlobalConfig(gc);
         //数据源配置
         DataSourceConfig dc = new DataSourceConfig();
-        dc.setUrl("jdbc:mysql://47.107.108.16:3306/dc?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false");
+//        dc.setUrl("jdbc:mysql://47.107.108.16:3306/dc?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false");
+        dc.setUrl("jdbc:mysql://101.132.38.90:3306/dc?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false");
         dc.setDriverName("com.mysql.cj.jdbc.Driver");
         dc.setUsername("root");
-        dc.setPassword("123456");
+//        dc.setPassword("123456");
         autoGenerator.setDataSource(dc);
         //包配置
         PackageConfig pc = new PackageConfig();
-        pc.setParent("com.zsm.validate");
+        pc.setParent("com.mooc.mybatis");
         pc.setController("controller");
         pc.setEntity("entity");
         pc.setMapper("mapper");
